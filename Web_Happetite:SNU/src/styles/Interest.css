@@ -1,0 +1,117 @@
+.bigText {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.smallText {
+  color: #adadad;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.buttonHolder {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.orangebutton {
+  background-color: transparent;
+  border: 1px solid;
+  border-color: #fdcd04;
+  padding: 8px 25px;
+  border-radius: 30px;
+  color: #fdcd04;
+  font-size: 14px;
+  margin: 5px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.orangebuttonActive {
+  background-color: #ff8a00;
+  border: 1px solid;
+  border-color: #ff8a00;
+  padding: 8px 25px;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 4px;
+  margin-bottom: 15px;
+
+  transition: background-color 0.3s ease;
+}
+
+.doneChoosing {
+  background-color: #2e2e2e;
+  color: #ff8a00;
+  font-size: 20px;
+  font-weight: bolder;
+  width: 200px;
+  border-radius: 50px;
+  text-decoration: none;
+  padding: 15px;
+  position: absolute;
+  bottom: 60px;
+  text-align: center;
+  left: 25%;
+  border: none;
+}
+
+/*bottom sheet*/
+
+.closeButton {
+  font-size: 20px;
+  color: black;
+  position: absolute;
+  right: 20px;
+  margin-top: 20px;
+}
+
+.bottomTitleText {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 0;
+  margin-left: 40px;
+}
+
+.bottomSubtitleText {
+  margin-left: 40px;
+  margin-right: 30px;
+  font-size: 15px;
+}
+
+.bottomButtonHolder {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 15px;
+}
+
+.bottomButton {
+  background-color: transparent;
+  border: 1px solid #ff8a00;
+  color: #ff8a00;
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: 14px;
+  margin: 8px 6px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.bottomButtonActive {
+  background-color: #ff8a00;
+  border: 1px solid #ff8a00;
+  color: white;
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: 14px;
+  margin: 8px 6px;
+  display: inline-flex;
+  align-items: center;
+}

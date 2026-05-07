@@ -1,0 +1,79 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: black;
+  max-width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  padding: 30px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 25px;
+  color: white;
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+textarea {
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 100px;
+  background-color: #e2e2e2;
+}
+
+.bigarea {
+  height: 180px;
+}
+
+.smallarea {
+  height: 100px;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border: 1px black solid;
+  border-radius: 30px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  width: 80%;
+}
+
+input[type="submit"]:hover {
+  background-color: #fdce04;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-size: 14px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.iconofSuggest {
+  padding-left: 30px;
+  padding-top: 50px;
+}
+
+.sendButton {
+  background-color: white;
+  border: none;
+  margin-top: 50px;
+  height: 55px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bolder;
+}

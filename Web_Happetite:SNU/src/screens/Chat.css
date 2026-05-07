@@ -1,0 +1,99 @@
+.chat-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y : auto;
+}
+
+.message {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.user-message {
+  position: relative;
+  display: inline-block;
+  background-color: #ccc;
+  padding: 8px 12px;
+  border-radius: 10px;
+  max-width: 70%; /* Adjust the maximum width as needed */
+  align-self: flex-end; /* Keeps user messages at the bottom */
+}
+
+.user-message::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 5px 0;
+  border-color: #ccc transparent transparent transparent;
+  right: 10px; /* Move the tooltip arrow to the right */
+  bottom: -10px; /* Move the tooltip arrow to the bottom */
+}
+
+.received-message {
+  position: relative;
+  display: inline-block;
+  background-color: #ccc;
+  padding: 8px 12px;
+  border-radius: 10px;
+  max-width: 70%; /* Adjust the maximum width as needed */
+  align-self: flex-start; /* Keeps received messages at the top */
+}
+
+.received-message::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 0 5px;
+  border-color: #ccc transparent transparent transparent;
+  left: 10px; /* Move the tooltip arrow to the left */
+  bottom: -10px; /* Move the tooltip arrow to the bottom */
+}
+
+
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+button[type="submit"] {
+  padding: 7px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}

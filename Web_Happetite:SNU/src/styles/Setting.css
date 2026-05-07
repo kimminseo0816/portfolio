@@ -1,0 +1,130 @@
+.body {
+  text-align: left;
+  height: 100vh;
+  width: 500px;
+  background-color: black;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-left: 30px;
+  padding-top: 50px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.iconContainer {
+  position: relative;
+  width: 20px;
+  padding: 0;
+}
+
+.icon {
+  color: white;
+  font-size: 40px;
+}
+
+.title {
+  position: relative;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 70px;
+
+  bottom: 63px;
+}
+
+/*edit from here*/
+
+.userinfo {
+  border-bottom: 1px solid gray;
+  width: 100%;
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+
+.idtext {
+  font-size: 25px;
+  color: #fdcd04;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.subtitle {
+  color: lightgray;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.settingtabContent {
+  padding-left: 45px;
+  padding-top: 30px;
+}
+
+.contentText {
+  color: white;
+  font-size: 20px;
+  margin: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+.infoText {
+  color: white;
+  font-size: 20px;
+  margin: 15px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+.deleteacount {
+  color: #797979;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 60px;
+  left: 45%;
+  width: 8;
+}
+
+.toSignin {
+  background-color: white;
+  border-radius: 6px;
+  border: none;
+  width: 150px;
+  height: 35px;
+  color: #ff5c00;
+  font-size: 10px;
+  margin-left: 40px;
+  position: relative;
+  bottom: 8px;
+}
+
+.versionText {
+  color: #929292;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  bottom: 30px;
+  left: 40%;
+}
+
+.subtitle2 {
+  color: white;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.brownSetting {
+  margin-left: 30px;
+  position: relative;
+  top: 2px;
+}

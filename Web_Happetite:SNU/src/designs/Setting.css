@@ -1,0 +1,34 @@
+.tabBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #282c34;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.tabBar button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tabBar button:hover {
+  background-color: #61dafb;
+}
+
+.tabContent {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tabContent .testtext {
+  color: black; /* Change the text color for content sections */
+}

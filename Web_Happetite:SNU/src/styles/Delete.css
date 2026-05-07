@@ -1,0 +1,87 @@
+.yellowBody {
+  background-color: #fff7da;
+  max-width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.checkreason {
+  background-color: white;
+  font-size: 22px;
+}
+
+.deleteText {
+  font-size: 30px;
+  font-weight: bolder;
+  white-space: pre-line;
+  padding-left: 40px;
+  margin-top: 80px;
+}
+
+.pstext {
+  color: #827a71;
+  font-size: 15px;
+  padding-top: 20px;
+  padding-left: 40px;
+}
+.deleteForm {
+  background-color: transparent;
+  height: 50%;
+  margin-bottom: 30px;
+}
+
+.reasonBox {
+  background-color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, #ffe2a9 12px, white 10px);
+  font-size: 22px;
+  padding-left: 30px;
+  white-space: pre-line;
+}
+
+.extraBox {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #ffe793;
+  border: none;
+  border-radius: 8px;
+  height: 60px;
+  width: 90%;
+  padding: 15px;
+  word-wrap: break-word;
+}
+.extraBox::placeholder {
+  color: #827a71e5;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nextButton {
+  background-color: #3c3227;
+  color: white;
+  border-radius: 30px;
+  height: 50px;
+  width: 90%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  padding-top: 15px;
+  padding-bottom: 0;
+  margin-left: 20px;
+}
+
+.passwordCheck {
+  background-color: #ffe793;
+  border-radius: 30px;
+  height: 60px;
+  border: none;
+  width: 80%;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 20px;
+  padding-left: 20px;
+  margin-bottom: 200px;
+}
