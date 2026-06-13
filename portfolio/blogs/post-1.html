@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes on evaluating LLM summaries without a reference — Alex Park</title>
+  <meta name="description" content="Practical approaches for evaluating generated summaries without a ground-truth reference." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a href="../index.html" class="nav-name">Alex Park</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">menu</button>
+      <ul class="nav-links">
+        <li><a href="../projects.html"><span class="ref">[01]</span> Projects</a></li>
+        <li><a href="../about.html"><span class="ref">[02]</span> About</a></li>
+        <li><a href="../cv.html"><span class="ref">[03]</span> CV</a></li>
+        <li><a href="../blog.html" class="active"><span class="ref">[04]</span> Writing</a></li>
+        <li><a href="../index.html#contact"><span class="ref">[05]</span> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="post-header">
+    <div class="wrap">
+      <span class="ref">2026-05-12 · 6 min read</span>
+      <h1 style="font-size: clamp(2rem, 5vw, 3rem);">Notes on evaluating LLM summaries without a reference</h1>
+      <p class="lede" style="margin-top: 14px;">
+        Some practical approaches for judging summary quality when
+        there's no ground-truth summary to compare against — which,
+        in production, is most of the time.
+      </p>
+    </div>
+  </header>
+
+  <section class="post-body" style="padding-top: 0;">
+    <div class="wrap" style="max-width: 70ch;">
+
+      <p>
+        Most summarization papers report ROUGE or BERTScore against a
+        human-written reference summary. In production, you usually
+        don't have one — the whole point is that a human isn't writing
+        a summary for every document. So the question becomes: how do
+        you know if a summary is any good?
+      </p>
+
+      <h2>Reference-free signals that actually help</h2>
+      <p>
+        A few signals have been useful in practice, roughly in order
+        of how cheap they are to compute:
+      </p>
+      <ul>
+        <li>Length and compression ratio relative to the source.</li>
+        <li>Factual consistency checks via natural language inference
+          models, comparing each summary sentence against the source.</li>
+        <li>Coverage — whether the key entities in the source also
+          appear in the summary.</li>
+        <li>Repetition and degeneration checks for n-gram loops.</li>
+      </ul>
+
+      <h2>A minimal evaluation harness</h2>
+      <p>
+        The harness I use runs each candidate summary through three
+        checks and produces a small report:
+      </p>
+
+      <pre><code>def evaluate_summary(source, summary):
+    return {
+        "compression": len(summary) / len(source),
+        "consistency": nli_consistency_score(source, summary),
+        "coverage": entity_coverage(source, summary),
+    }
+</code></pre>
+
+      <p>
+        None of these checks are perfect on their own, but tracked
+        together over time they catch most regressions — a model that
+        suddenly starts hallucinating facts will show a consistency
+        drop well before anyone notices in a manual review.
+      </p>
+
+      <blockquote>
+        The goal isn't a single score. It's a small set of signals that
+        moves together, so when one of them moves alone, you know
+        where to look.
+      </blockquote>
+
+      <h2>What this doesn't catch</h2>
+      <p>
+        Tone, style, and "is this actually useful to a reader" still
+        need human review. These automated checks are a first filter,
+        not a replacement for periodically reading the outputs
+        yourself.
+      </p>
+
+      <p>
+        <a href="../blog.html" class="back-link">← Back to all posts</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+      <span>© 2026 Alex Park</span>
+      <a href="../index.html">Back to home</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
